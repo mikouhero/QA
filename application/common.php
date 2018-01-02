@@ -133,6 +133,7 @@ function forQQ($code)
     $userinfo_url = 'https://graph.qq.com/user/get_user_info?access_token='.$token.'&oauth_consumer_key=101448051&openid='.$openid;
     $info = json_decode(https_request($userinfo_url),true);
     $QQ['token'] = $token;
-    $QQ['nickname']   = $info['nickname'];
+    $QQ['nickname'] = $info['nickname'];
+    $QQ['regtime'] = time();
     return $QQ;
 }

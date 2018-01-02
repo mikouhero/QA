@@ -24,508 +24,60 @@
             </ul>
             
             <div class="stream-list question-stream">
-                <section class="stream-list-item">
+
+                {volist name='list' id='v'}
+                <section class="stream-list-item" height="100">
                     <div class="qa-rank">
+                        {if condition='($v.status eq 0) and ($v.answer_count eq 0)'}
                         <div class="answers ">
-                            0<small> 回答 </small>
+                            {$v.answer_count}<small> 回答 </small>
                         </div>
+                        {elseif condition='($v.status eq 0) and ($v.answer_count <> 0)'/}
+                        <div class="answers  answered ">
+                            {$v.answer_count}<small> 回答 </small>
+                        </div>
+                        {else /}
+                        <div class="answers  solved ">
+                            {$v.answer_count}<small> 解决 </small>
+                        </div>
+                        {/if}
                         <div class="views hidden-xs">
-                            41<small>浏览</small>
+                            {$v.read_count}<small>浏览</small>
                         </div>
                     </div>
-                    <div class="summary">
+                    <div class="summary" style="height:45px;">
                         <ul class="author list-inline">
                             <li>
-                                <a href="https://wenda.tipask.com/people/3605" target="_blank">小乌龟z</a>
+                                <a href="" target="_blank">{$v.username}</a>
                                 <span class="split"></span>
-                                <span class="askDate">1天前</span>
+                                <span class="askDate">{:date('Y-m-d H:i:s',$v.create_time)}</span>
                             </li>
                         </ul>
                         <h2 class="title">
-                            <a href="{:url('index/questions/read')}" target="_blank" >看盘技术的分析该怎么培养？《爱死磕解析》</a>
+                            {if condition="$v.gold <> 0"}
+                            <span class="text-gold"><i class="fa fa-database"></i> {$v.gold}</span>
+                            {/if}
+                            <a href="{:url('index/questions/read',['id'=>$v['id']])}" target="_blank" >{$v.title}</a>
                         </h2>
                         <ul class="taglist-inline ib">
                         </ul>
                     </div>
                 </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            30<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3605" target="_blank">小乌龟z</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                        <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                        <a href="https://wenda.tipask.com/question/4777" target="_blank" >期货投资心态如何炒期货《爱死磕解析》</a>
-                        </h2>
-                         <ul class="taglist-inline ib">
-                        </ul>
-                        </div>
-                </section>
-                 <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            16<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3605" target="_blank">小乌龟z</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4774" target="_blank" >股票有哪些特征出现的时候可以买入？《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            19<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3605" target="_blank">小乌龟z</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4773" target="_blank" >尾盘的行在洗盘中预示着什么《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            16<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3566" target="_blank">shaoye001</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4772" target="_blank" >RSI指标运用原则？（爱死磕）RSI指标的优缺点？</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            18<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3585" target="_blank">猫咪没了鱼</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4771" target="_blank" >RSI指标的缺陷（爱死磕）短线卖出信号攻略？</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  solved ">
-                            1<small> 解决 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            28<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3587" target="_blank">起个名字真难</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                            <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                                                        <a href="https://wenda.tipask.com/question/4770" target="_blank" >RSI指标的应用原则？（爱死磕）RSI指标的操盘技巧？</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  answered ">
-                            1<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            23<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3601" target="_blank">孤独的王</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4769" target="_blank" >RSI指标的操盘技巧（爱死磕）RSI指标的买卖信号？</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  solved ">
-                            1<small> 解决 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            18<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3605" target="_blank">小乌龟z</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4768" target="_blank" >分时图的详细解析，股票分时图的走势分析《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  solved ">
-                            1<small> 解决 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            17<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3571" target="_blank">aisike</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4767" target="_blank" >低位的价格怎么买入股票？《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  answered ">
-                            1<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            17<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3592" target="_blank">闯荡十分</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                            <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                                                        <a href="https://wenda.tipask.com/question/4765" target="_blank" >k线必涨形态图？CR指标的技巧6种</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  solved ">
-                            1<small> 解决 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            16<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3605" target="_blank">小乌龟z</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4764" target="_blank" >均线的实战技巧是什么？简单教会你《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  solved ">
-                            1<small> 解决 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            17<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3571" target="_blank">aisike</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4763" target="_blank" >交易之路是非常艰辛的道路《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  solved ">
-                            1<small> 解决 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            20<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3605" target="_blank">小乌龟z</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4762" target="_blank" >股市中均量线的卖出法《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  solved ">
-                            1<small> 解决 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            19<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3571" target="_blank">aisike</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                        <a href="https://wenda.tipask.com/question/4761" target="_blank" >尾盘走势都有哪些类型？《爱死磕解析》</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            29<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/2320" target="_blank">JOJO</a>
-                                <span class="split"></span>
-                                <span class="askDate">1天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                            <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                                                        <a href="https://wenda.tipask.com/question/4759" target="_blank" >快乐是什么意思</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                            <li class="tagPopup"><a class="tag" target="_blank" href="https://wenda.tipask.com/topic/1451">快乐</a></li>
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            36<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3613" target="_blank">白敏娟</a>
-                                <span class="split"></span>
-                                <span class="askDate">2天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                            <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                                                        <a href="https://wenda.tipask.com/question/4758" target="_blank" >老师  左右翻页效果如何实现呢</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                            <li class="tagPopup"><a class="tag" target="_blank" href="https://wenda.tipask.com/topic/191">123</a></li>
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers ">
-                            0<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            22<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3612" target="_blank">小青哥哥</a>
-                                <span class="split"></span>
-                                <span class="askDate">2天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                            <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                                                        <a href="https://wenda.tipask.com/question/4757" target="_blank" >asdasd</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  answered ">
-                            2<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            36<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3592" target="_blank">闯荡十分</a>
-                                <span class="split"></span>
-                                <span class="askDate">2天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                            <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                                                        <a href="https://wenda.tipask.com/question/4756" target="_blank" >中小资金管理方法？做好短线的8原则爱死磕什么是期货？</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                    </ul>
-                                            </div>
-                </section>
-                <section class="stream-list-item">
-                    <div class="qa-rank">
-                        <div class="answers  answered ">
-                            1<small> 回答 </small>
-                        </div>
-                        <div class="views hidden-xs">
-                            30<small>浏览</small>
-                        </div>
-                    </div>
-                    <div class="summary">
-                        <ul class="author list-inline">
-                            <li>
-                                <a href="https://wenda.tipask.com/people/3601" target="_blank">孤独的王</a>
-                                <span class="split"></span>
-                                <span class="askDate">2天前</span>
-                            </li>
-                        </ul>
-                        <h2 class="title">
-                                                            <span class="text-gold"><i class="fa fa-database"></i> 5</span>
-                                                        <a href="https://wenda.tipask.com/question/4755" target="_blank" >什么是止损？(爱死磕)止损的目的？</a>
-                        </h2>
-                                                <ul class="taglist-inline ib">
-                                                            <li class="tagPopup"><a class="tag" target="_blank" href="https://wenda.tipask.com/topic/658">理财投资</a></li>
-                                                    </ul>
-                                            </div>
-                </section>
-                
+
+                {/volist}
+
             </div><!-- /.stream-list -->
 
             <div class="text-center">
-                <ul class="pagination"><li class="disabled"><span>&laquo;</span></li> <li class="active"><span>1</span></li><li><a href="https://wenda.tipask.com/questions?page=2">2</a></li><li><a href="https://wenda.tipask.com/questions?page=3">3</a></li><li><a href="https://wenda.tipask.com/questions?page=4">4</a></li><li><a href="https://wenda.tipask.com/questions?page=5">5</a></li><li><a href="https://wenda.tipask.com/questions?page=6">6</a></li><li><a href="https://wenda.tipask.com/questions?page=7">7</a></li><li><a href="https://wenda.tipask.com/questions?page=8">8</a></li><li class="disabled"><span>...</span></li><li><a href="https://wenda.tipask.com/questions?page=59">59</a></li><li><a href="https://wenda.tipask.com/questions?page=60">60</a></li> <li><a href="https://wenda.tipask.com/questions?page=2" rel="next">&raquo;</a></li></ul>
+                <ul class="pagination">
+                   {$list->render();}
+                </ul>
             </div>
         </div><!-- /.main -->
         <div class="col-md-3 hidden-xs side">
             <div class="side-alert alert alert-warning">
                 <p>今天，你的网站遇到什么问题呢？</p>
-                <a href="{:url('index/UserQuestion/index')}" class="btn btn-primary btn-block mt-10">立即提问</a>
+                <a href="{:url('index/AskQuestion/index')}" class="btn btn-primary btn-block mt-10">立即提问</a>
             </div>
             <div class="widget-box">
                 <h2 class="h4 widget-box-title">热议话题 <a href="https://wenda.tipask.com/topics" title="更多">»</a></h2>

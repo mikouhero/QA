@@ -58,13 +58,13 @@ class Login extends Controller
     public function qqLogin($code)
     {
         $data = forQQ($code);
-        // var_dump($data);
+        // var_dump($data);die;
         //
-        // 查询 token 是否存在于 vip 表中
-        $result = Db::name('vip')->where(['token'=>$data['token']])->find();
+        // 查询 token 是否存在于 user 表中
+        $result = Db::name('user')->where(['token'=>$data['token']])->find();
         if(empty($result)){
             //插入数据
-            $res = Db::name('vip')->insertGetId($data);
+            $res = Db::name('user')->insertGetId($data);
             if(!$res){
                 $this->error('登录失败');
             }else{

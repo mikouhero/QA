@@ -9,7 +9,7 @@ use think\Db;
 
 class AskQuestion extends Controller
 {
-
+    // 提问的界面
     public function index()
     {
         $info = array();
@@ -22,6 +22,8 @@ class AskQuestion extends Controller
             'list'=>$list
         ]);
     }
+
+    // 发布问题
     public function save(Request $request)
     {
         $info = array();
@@ -33,8 +35,8 @@ class AskQuestion extends Controller
         // {
         //     $this->error("验证码错误");
         // };
-        var_dump($info);
-        var_dump($data);die;
+        // var_dump($info);
+        // var_dump($data);die;
         // 判断是否有足够的额gold 作为条件
         $gold= Db::name('user')->field(['gold'])->where(['id'=>$info['id']])->find();
         // var_dump($data['gold']);
@@ -64,15 +66,71 @@ class AskQuestion extends Controller
             Db::commit();
         } catch (\Exception $e) {
             Db::rollback();
+            // var_dump($result1);
+            // var_dump($result2);
+            // var_dump($result3);
+            // var_dump($result4);die;
+
             $this->error('发布失败');
             exit;
         }
         $this->success('发布成功','/index/questions/index');
 
-        // if($result4){
-        //     $this->success('发布成功','/index/questions/index');
-        // }else{
-        //     $this->error('发布失败');
-        // }
+        if($result4){
+            $this->success('发布成功','/index/questions/index');
+        }else{
+            $this->error('发布失败');
+        }
     }
+
+    //回答问题
+    public function answer(Request $request,$id)
+    {
+        //文章id  $id
+        // 内容$data
+        $info = Session::get('vip_info');
+        $data = $request->post();
+        // 动用数据 user
+        // 用户的回答问题数量 +1
+        // 积分 +1
+
+        // question_answer
+        // question_id $id
+        //content $data['content']
+        // creatime time()
+        // uid $info['id']
+
+        Db::startTrans();
+        try {
+            //文章id  $id
+            // 内容$data
+            $info = Session::get('vip_info');
+            $data = $request->post();
+            // 动用数据 user
+            // 用户的回答问题数量 +1
+            // 积分 +1
+            // question_answer
+            // question_id $id
+            //content $data['content']
+            // creatime time()
+            // uid $info['id']
+            // question  回答数加1
+            $KK = Db::name('question')->where(['id'=>$id])->setInc('answer_count',1);
+
+            // var_dump($KK);die;
+            $result = Db::name('user')->where(['id'=>$info['id']])->setInc('answer_count',1);
+
+            $result1 = Db::name('user')->where(['id'=>$info['id']])->setInc('score',1);
+            $data['question_id'] = $id;
+            $data['create_time'] = time();
+            $data['uid'] = $info['id'];
+            $k = Db::name('question_answer')->insert($data);
+        } catch (Exception $e) {
+            $this->error('发布失败');
+            exit;
+        }
+            $this->success('发布成功','index/questions/index');
+    }
+
+
 }
