@@ -1,0 +1,111 @@
+{extend name='index/index' /}
+{block name='main'}
+<script src="/static/index/tipask/js/push.js"></script>
+<script src="/static/index/tipask/js/hm.js"></script>
+<script src="/static/index/tipask/js/jquery_002.js"></script>
+
+
+<script src="/static/index/tipask/js/global.js"></script>
+<script src="/static/index/tipask/js/summernote.js"></script>
+<script src="/static/index/tipask/js/summernote-zh-CN.js"></script>
+<script type="text/javascript" src="/static/index/tipask/js/summernote-ext-attach.js"></script>
+<div class="wrap">
+    <div class="container">
+        <div class="row mt-10">
+            <ol class="breadcrumb">
+                <li><a href="https://wenda.tipask.com/questions">问答</a></li>
+                <li class="active">发起提问</li>
+            </ol>
+            <form role='form' action="{:url('index/AskQuestion/save')}" method="post">
+                <div class="form-group ">
+                    <label for="title"> 请将您的问题告诉我们  :</label>
+                    <input id="title" name="title" class="form-control input-lg" placeholder="请在这里概述您的问题" type="text">
+                </div>
+                <div id="titleSuggest" class="panel hide widget-suggest panel-default">
+                    <div class="panel-body">
+                        <p>
+                            <strong>这些问题可能有你需要的答案</strong>
+                            <button type="button" class="widget-suggest-close btn btn-default btn-xs ml-10">关闭提示</button>
+                        </p>
+                        <ul id="suggest-list" class="list-unstyled widget-suggest-list">
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="question_editor">问题描述(选填)</label>
+                    <div id="question_editor" style="display: none;">
+                    </div>
+                    <script type="text/javascript" src="/static/index/tipask/js/jquery.min.js"></script>
+                    <script type="text/javascript" src="/static/index/tipask/js/wangEditor.min.js"></script>
+
+                    <div id="div1">
+                    </div>
+                    <textarea id="text1" style="width:100%; height:200px;display: none" name="content"></textarea>
+                    <script type="text/javascript">
+                        var E = window.wangEditor
+                        var editor = new E('#div1')
+                        var $text1 = $('#text1')
+                        editor.customConfig.onchange = function (html) {
+                            // 监控变化，同步更新到 textarea
+                            $text1.val(html)
+                        }
+                        editor.create()
+                        // 初始化 textarea 的值
+                        $text1.val(editor.txt.html())
+                    </script>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <select name="category_id" id="category_id" class="form-control">
+                                <option value="0">请选择分类</option>
+                                <option value="2">程序使用</option>
+                                <option value="3">bug反馈</option>
+                                <option value="4">功能建议</option>
+                                <option value="7">二次开发</option>
+                                <option value="8" selected="selected">建站交流</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <input id="select_tags" name="select_tags" class="form-control select2-hidden-accessible" multiple="multiple" tabindex="-1" aria-hidden="true" placeholder="选择话题" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-20">
+                    <div class="col-xs-12 col-md-11">
+                        <ul class="list-inline">
+                            <li class="pull-right">
+                                <div class="form-group ">
+                                    <input class="form-control" name="captcha" required="" placeholder="验证码" type="text">
+                                    <div class="mt-10">
+                                        <a href="javascript:void(0);" id="reloadCaptcha"><img src="%E5%8F%91%E8%B5%B7%E6%8F%90%E9%97%AE%20-%20Tipask%E7%AB%99%E9%95%BF%E7%A4%BE%E5%8C%BA_files/default.png"></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <select name="price">
+                                    <option value="0">0</option>
+                                    <option selected="selected" value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">20</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="80">80</option>
+                                    <option value="100">100</option>
+                                </select>
+                                &nbsp;金币
+                            </li>
+                            <li><input name="hide" value="1" type="checkbox">&nbsp;匿名</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-1">
+                        <button type="submit" class="btn btn-primary pull-right">发布问题</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}
