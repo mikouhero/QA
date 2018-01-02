@@ -57,19 +57,15 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">
-                            <select name="category_id" id="category_id" class="form-control">
-                                <option value="0">请选择分类</option>
-                                <option value="2">程序使用</option>
-                                <option value="3">bug反馈</option>
-                                <option value="4">功能建议</option>
-                                <option value="7">二次开发</option>
-                                <option value="8" selected="selected">建站交流</option>
+                            <select name="category_id" id="category_id" class="form-control">           {volist name='list' id='v'}
+                                <option value="{$v.id}">{$v.name}</option>
+                                {/volist}
                             </select>
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="form-group">
-                            <input id="select_tags" name="select_tags" class="form-control select2-hidden-accessible" multiple="multiple" tabindex="-1" aria-hidden="true" placeholder="选择话题" >
+                            <input id="select_tags" name="keyword" class="form-control select2-hidden-accessible" multiple="multiple" tabindex="-1" aria-hidden="true" placeholder="选择话题" >
                         </div>
                     </div>
                 </div>
@@ -78,14 +74,13 @@
                         <ul class="list-inline">
                             <li class="pull-right">
                                 <div class="form-group ">
-                                    <input class="form-control" name="captcha" required="" placeholder="验证码" type="text">
+                                    <input class="form-control" name="code" required="" placeholder="验证码" type="text">
                                     <div class="mt-10">
-                                        <a href="javascript:void(0);" id="reloadCaptcha"><img src="%E5%8F%91%E8%B5%B7%E6%8F%90%E9%97%AE%20-%20Tipask%E7%AB%99%E9%95%BF%E7%A4%BE%E5%8C%BA_files/default.png"></a>
-                                    </div>
+                                       <div class="form-group"><img src="{:captcha_src()}" alt="captcha" style="height:40px;width:150px"/></div>                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <select name="price">
+                                <select name="gold">
                                     <option value="0">0</option>
                                     <option selected="selected" value="5">5</option>
                                     <option value="10">10</option>
