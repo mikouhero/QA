@@ -34,7 +34,7 @@ class Admin extends Controller
         // var_dump($nodelist[$mname]);die;
 
         // 超级管理员 所有权限
-        if(Session::get('admin_user.adminname') != 'admin'){
+        if(Session::get('admin_user.adminname') != 'admin888'){
             //验证操作权限
             if(empty($nodelist[$mname]) || !in_array($aname,$nodelist[$mname])){
 

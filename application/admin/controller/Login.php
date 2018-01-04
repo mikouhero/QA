@@ -87,10 +87,10 @@ class Login extends Controller
             $list[$vo['mname']][] = $vo['aname'];
             // 把修改和执行修改 添加和执行添加 拼装到一起
             if($vo['aname']=="edit"){
-                $list[$vo['mname']][]="save";
+                $list[$vo['mname']][]="update";
             }
-            if($vo['aname']=="add"){
-                $list[$vo['mname']][]="doadd";
+            if($vo['aname']=="create"){
+                $list[$vo['mname']][]="save";
             }
         }
         // var_dump($list);die;

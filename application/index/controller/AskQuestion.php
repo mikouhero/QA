@@ -23,7 +23,7 @@ class AskQuestion extends Controller
         ]);
     }
 
-    // 发布问题
+    // 用户发布问题
     public function save(Request $request)
     {
         $info = array();
@@ -83,7 +83,7 @@ class AskQuestion extends Controller
         }
     }
 
-    //回答问题
+    //用户回答问题
     public function answer(Request $request,$id)
     {
         //文章id  $id
@@ -125,11 +125,44 @@ class AskQuestion extends Controller
             $data['create_time'] = time();
             $data['uid'] = $info['id'];
             $k = Db::name('question_answer')->insert($data);
+            Db::commit();
         } catch (Exception $e) {
             $this->error('发布失败');
             exit;
         }
+        // var_dump($data);
+        // var_dump($k);die;
             $this->success('发布成功','index/questions/index');
+    }
+
+    // 用户对问题答案的评论
+    public function answerComment(Request $request,$id,$uid)
+    {
+        // $id 答案id
+        // uid 用户id
+        $data = $request->post();
+        // var_dump($data,$id,$uid);
+
+        Db::startTrans();
+        try {
+            // 动用数据库
+            // question_answer 表中 对应得 comment_count +1
+            $result = Db::name('question_answer')->where(['id'=>$id])->setInc('comment_count',1);
+            // var_dump($result);
+            //question_answer_comment 问题答案id $id content uid
+            $data['create_time'] = time();
+            $data['uid'] = $uid;
+            $data['question_answer_id'] = $id;
+            var_dump($data);
+            //将数据导入 question_answer
+            $result = Db::name('question_answer_comment')->insert($data);
+            Db::commit();
+            // var_dump($result);
+        } catch (Exception $e) {
+            Db::rollback();
+            $this->error('评论失败');
+        }
+        $this->success('评论成功');
     }
 
 

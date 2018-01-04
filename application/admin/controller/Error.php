@@ -13,5 +13,10 @@ class Error extends Controller
         $this->redirect('admin/index/index');
     }
 
+    public function _empty()
+    {
+        $this->redirect('admin/lndex/index');
+    }
+
 
 }

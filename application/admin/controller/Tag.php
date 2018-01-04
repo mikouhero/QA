@@ -1,20 +1,16 @@
 <?php
 
-namespace {%namespace%};
+namespace app\admin\controller;
 
 use think\Controller;
 use think\Request;
 
-class {%className%} extends Controller
+class Tag extends Admin
 {
-    /**
-     * 显示资源列表
-     *
-     * @return \think\Response
-     */
+
     public function index()
     {
-        //
+
     }
 
     /**

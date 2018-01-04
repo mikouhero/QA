@@ -55,7 +55,7 @@ function sendTemplateSMS($to,$datas,$tempId)
 }
 
 //发送邮箱验证码
-function sendMail($usermail)
+function sendMail($usermail,$code)
 {
     $mail = new PhpMailer(); //建立邮件发送类
     $mail->CharSet = "UTF-8";
@@ -75,7 +75,7 @@ function sendMail($usermail)
     $mail->IsHTML(true); // set email format to HTML //是否使用HTML格式
 
     $mail->Subject = "您的验证码是:"; //邮件标题
-    $mail->Body = "895652"; //邮件内容，上面设置HTML，则可以是HTML
+    $mail->Body = $code; //邮件内容，上面设置HTML，则可以是HTML
 
     if(!$mail->Send())
     {

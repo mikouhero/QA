@@ -27,11 +27,11 @@
                         </div>
                         <div class="post-opt mt-10">
                             <ul class="list-inline text-muted">
-                                <li>
-                                    <a class="comments" data-toggle="collapse" href="#comments-question-3484" aria-expanded="false" aria-controls="comment-3484">
-                                        <i class="fa fa-comment-o"></i> 0 条评论
-                                    </a>
-                                </li>
+                                <!--<li>-->
+                                    <!--<a class="comments" data-toggle="collapse" href="#comments-question-3484" aria-expanded="false" aria-controls="comment-3484">-->
+                                        <!--<i class="fa fa-comment-o"></i> 0 条评论-->
+                                    <!--</a>-->
+                                <!--</li>-->
                                 <li>分类：<a href="" >{$category['name']}</a>
                                 </li>
                             </ul>
@@ -58,7 +58,7 @@
                                     <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="answer-comment-2137-btn" data-token="SdQzJByudjcUNWgmrHGAEaAG3b8jJ1SxwU46yf9s" data-source_id="2137" data-source_type="answer" data-to_user_id="0">提交评论</button>
                                 </div>
                             </div>
-                        </div>
+                            </div>
                         <div class="mb-10">
                             <div class="social-share" data-sites="weibo,qq,qzone,tencent,wechat">
                             </div>
@@ -77,14 +77,14 @@
                                 又没什么改进，急什么急
                             </p>
                         </div>
-                        <div class="options clearfix mt-10">
-                            <ul class="list-inline pull-right">
-                                <li class="pull-right">
-                                    <a class="comments mr-10" data-toggle="collapse" href="#comments-answer-2127" aria-expanded="false" aria-controls="comment-2127"><i class="fa fa-comment-o"></i> 6 条评论</a>
-                                    <button class="btn btn-default btn-sm btn-support" data-source_id="2127" data-source_type="answer" data-support_num="6"><i class="fa fa-thumbs-o-up"></i> 6</button>
-                                </li>
-                            </ul>
-                        </div>
+                        <!--<div class="options clearfix mt-10">-->
+                            <!--<ul class="list-inline pull-right">-->
+                                <!--<li class="pull-right">-->
+                                    <!--<a class="comments mr-10" data-toggle="collapse" href="#comments-answer-2127" aria-expanded="false" aria-controls="comment-2127"><i class="fa fa-comment-o"></i> 6 条评论</a>-->
+                                    <!--<button class="btn btn-default btn-sm btn-support" data-source_id="2127" data-source_type="answer" data-support_num="6"><i class="fa fa-thumbs-o-up"></i> 6</button>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
                         <div class="collapse widget-comments mb-20" id="comments-answer-2127" data-source_type="answer" data-source_id="2127">
                             <div class="widget-comment-list">
                                 <div class="media">
@@ -137,252 +137,6 @@
                                         })
                                     })
                                 </script>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="https://wenda.tipask.com/people/1337" target="_blank">
-                                            <img class="media-object avatar-27" alt="廖香峰SEO" src="./想问一下3.2的版本什么时候放出来啊 - Tipask站长社区_files/1337_small.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">
-                                            <a href="https://wenda.tipask.com/people/1337" target="_blank">廖香峰SEO</a>
-                                        </div>
-                                        <div class="content">
-                                            <p>
-                                                不是加了一个金币悬赏功能吗
-                                            </p>
-                                        </div>
-                                        <div class="media-footer">
-                                            <ul class="list-inline text-muted">
-                                                <li>
-                                                    2017-03-23 14:07
-                                                </li>
-                                                <li>
-                                                    <a href="https://wenda.tipask.com/question/3484#" class="ml-10 comment-reply" data-source_id="2127" data-to_user_id="1337" data-source_type="answer" data-message="回复 廖香峰SEO"><i class="fa fa-reply"></i> 回复</a>
-                                                </li>
-                                                <li class="pull-right">
-                                                    <button class="btn btn-default btn-xs btn-support" data-source_id="938" data-source_type="comment" data-support_num="1"><i class="fa fa-thumbs-o-up"></i> 1</button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script type="text/javascript">
-                                    $(function(){
-                                        $(".widget-comment-list .btn-support").on("click",function(){
-                                            var btn_support = $(this);
-                                            var source_type = btn_support.data('source_type');
-                                            var source_id = btn_support.data('source_id');
-                                            var support_num = parseInt(btn_support.data('support_num'));
-                                            $.get('/support/'+source_type+'/'+source_id,function(msg){
-                                                console.log(msg);
-                                                if(msg =='success'){
-                                                    support_num++
-                                                }
-                                                btn_support.html('<i class="fa fa-thumbs-o-up"></i> '+support_num);
-                                                btn_support.data('support_num',support_num);
-                                            });
-                                        })
-                                    })
-                                </script>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="https://wenda.tipask.com/people/2899" target="_blank">
-                                            <img class="media-object avatar-27" alt="刀魂" src="./想问一下3.2的版本什么时候放出来啊 - Tipask站长社区_files/2899_small.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">
-                                            <a href="https://wenda.tipask.com/people/2899" target="_blank">刀魂</a>
-                                            <span class="text-muted">回复 </span>
-                                            <a href="https://wenda.tipask.com/people/1337" target="_blank">廖香峰SEO</a>
-                                        </div>
-                                        <div class="content">
-                                            <p>
-                                                大我问问
-                                            </p>
-                                        </div>
-                                        <div class="media-footer">
-                                            <ul class="list-inline text-muted">
-                                                <li>
-                                                    2017-10-23 10:02
-                                                </li>
-                                                <li>
-                                                    <a href="https://wenda.tipask.com/question/3484#" class="ml-10 comment-reply" data-source_id="2127" data-to_user_id="2899" data-source_type="answer" data-message="回复 刀魂"><i class="fa fa-reply"></i> 回复</a>
-                                                </li>
-                                                <li class="pull-right">
-                                                    <button class="btn btn-default btn-xs btn-support" data-source_id="1482" data-source_type="comment" data-support_num="0"><i class="fa fa-thumbs-o-up"></i> 0</button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script type="text/javascript">
-                                    $(function(){
-                                        $(".widget-comment-list .btn-support").on("click",function(){
-                                            var btn_support = $(this);
-                                            var source_type = btn_support.data('source_type');
-                                            var source_id = btn_support.data('source_id');
-                                            var support_num = parseInt(btn_support.data('support_num'));
-                                            $.get('/support/'+source_type+'/'+source_id,function(msg){
-                                                console.log(msg);
-                                                if(msg =='success'){
-                                                    support_num++
-                                                }
-                                                btn_support.html('<i class="fa fa-thumbs-o-up"></i> '+support_num);
-                                                btn_support.data('support_num',support_num);
-                                            });
-                                        })
-                                    })
-                                </script>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="https://wenda.tipask.com/people/2899" target="_blank">
-                                            <img class="media-object avatar-27" alt="刀魂" src="./想问一下3.2的版本什么时候放出来啊 - Tipask站长社区_files/2899_small.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">
-                                            <a href="https://wenda.tipask.com/people/2899" target="_blank">刀魂</a>
-                                        </div>
-                                        <div class="content">
-                                            <p>
-                                                发反反复复
-                                            </p>
-                                        </div>
-                                        <div class="media-footer">
-                                            <ul class="list-inline text-muted">
-                                                <li>
-                                                    2017-10-22 18:51
-                                                </li>
-                                                <li>
-                                                    <a href="https://wenda.tipask.com/question/3484#" class="ml-10 comment-reply" data-source_id="2127" data-to_user_id="2899" data-source_type="answer" data-message="回复 刀魂"><i class="fa fa-reply"></i> 回复</a>
-                                                </li>
-                                                <li class="pull-right">
-                                                    <button class="btn btn-default btn-xs btn-support" data-source_id="1480" data-source_type="comment" data-support_num="0"><i class="fa fa-thumbs-o-up"></i> 0</button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script type="text/javascript">
-                                    $(function(){
-                                        $(".widget-comment-list .btn-support").on("click",function(){
-                                            var btn_support = $(this);
-                                            var source_type = btn_support.data('source_type');
-                                            var source_id = btn_support.data('source_id');
-                                            var support_num = parseInt(btn_support.data('support_num'));
-                                            $.get('/support/'+source_type+'/'+source_id,function(msg){
-                                                console.log(msg);
-                                                if(msg =='success'){
-                                                    support_num++
-                                                }
-                                                btn_support.html('<i class="fa fa-thumbs-o-up"></i> '+support_num);
-                                                btn_support.data('support_num',support_num);
-                                            });
-                                        })
-                                    })
-                                </script>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="https://wenda.tipask.com/people/268" target="_blank">
-                                            <img class="media-object avatar-27" alt="张子豪" src="./想问一下3.2的版本什么时候放出来啊 - Tipask站长社区_files/268_small.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">
-                                            <a href="https://wenda.tipask.com/people/268" target="_blank">张子豪</a>
-                                            <span class="text-muted">回复 </span>
-                                            <a href="https://wenda.tipask.com/people/1337" target="_blank">廖香峰SEO</a>
-                                        </div>
-                                        <div class="content">
-                                            <p>
-                                                是可以在后台直接给到某个用户吧！
-                                            </p>
-                                        </div>
-                                        <div class="media-footer">
-                                            <ul class="list-inline text-muted">
-                                                <li>
-                                                    2017-03-24 04:51
-                                                </li>
-                                                <li>
-                                                    <a href="https://wenda.tipask.com/question/3484#" class="ml-10 comment-reply" data-source_id="2127" data-to_user_id="268" data-source_type="answer" data-message="回复 张子豪"><i class="fa fa-reply"></i> 回复</a>
-                                                </li>
-                                                <li class="pull-right">
-                                                    <button class="btn btn-default btn-xs btn-support" data-source_id="943" data-source_type="comment" data-support_num="0"><i class="fa fa-thumbs-o-up"></i> 0</button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script type="text/javascript">
-                                    $(function(){
-                                        $(".widget-comment-list .btn-support").on("click",function(){
-                                            var btn_support = $(this);
-                                            var source_type = btn_support.data('source_type');
-                                            var source_id = btn_support.data('source_id');
-                                            var support_num = parseInt(btn_support.data('support_num'));
-                                            $.get('/support/'+source_type+'/'+source_id,function(msg){
-                                                console.log(msg);
-                                                if(msg =='success'){
-                                                    support_num++
-                                                }
-                                                btn_support.html('<i class="fa fa-thumbs-o-up"></i> '+support_num);
-                                                btn_support.data('support_num',support_num);
-                                            });
-                                        })
-                                    })
-                                </script>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="https://wenda.tipask.com/people/60" target="_blank">
-                                            <img class="media-object avatar-27" alt="冰山一角" src="./想问一下3.2的版本什么时候放出来啊 - Tipask站长社区_files/60_small.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="media-heading">
-                                            <a href="https://wenda.tipask.com/people/60" target="_blank">冰山一角</a>
-                                            <span class="text-muted">回复 </span>
-                                            <a href="https://wenda.tipask.com/people/268" target="_blank">张子豪</a>
-                                        </div>
-                                        <div class="content">
-                                            <p>
-                                                不是原来就有吗
-                                            </p>
-                                        </div>
-                                        <div class="media-footer">
-                                            <ul class="list-inline text-muted">
-                                                <li>
-                                                    2017-03-23 14:58
-                                                </li>
-                                                <li>
-                                                    <a href="https://wenda.tipask.com/question/3484#" class="ml-10 comment-reply" data-source_id="2127" data-to_user_id="60" data-source_type="answer" data-message="回复 冰山一角"><i class="fa fa-reply"></i> 回复</a>
-                                                </li>
-                                                <li class="pull-right">
-                                                    <button class="btn btn-default btn-xs btn-support" data-source_id="941" data-source_type="comment" data-support_num="0"><i class="fa fa-thumbs-o-up"></i> 0</button>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script type="text/javascript">
-                                    $(function(){
-                                        $(".widget-comment-list .btn-support").on("click",function(){
-                                            var btn_support = $(this);
-                                            var source_type = btn_support.data('source_type');
-                                            var source_id = btn_support.data('source_id');
-                                            var support_num = parseInt(btn_support.data('support_num'));
-                                            $.get('/support/'+source_type+'/'+source_id,function(msg){
-                                                console.log(msg);
-                                                if(msg =='success'){
-                                                    support_num++
-                                                }
-                                                btn_support.html('<i class="fa fa-thumbs-o-up"></i> '+support_num);
-                                                btn_support.data('support_num',support_num);
-                                            });
-                                        })
-                                    })
-                                </script>
                                 <div class="text-center mb-20 mt-20">
                                 </div>
                             </div>
@@ -404,13 +158,13 @@
                                     <strong><a href="https://wenda.tipask.com/people/60" class="mr5">冰山一角</a><span class="text-gold"></span></strong>
                                 </div>
                                 <div class="content">
-                                    <span class="answer-time text-muted hidden-xs"> 采纳率 47% | 回答于 2017-03-23 13:59</span>
+                                     回答于 2017-03-23 13:59</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/if}
-                </div>
+                    </div>
 
                 <div class="widget-answers mt-15">
                     <div class="btn-group pull-right" role="group">
@@ -422,148 +176,100 @@
                     {else /}
                     <h2 class="h4 post-title"> {$list.answer_count} 个回答</h2>
                     {/if}
+
+                    {volist name='msg' id='vo'}
                     <div class="media">
                         <div class="media-left">
-                            <a href="https://wenda.tipask.com/people/2327" class="avatar-link user-card" target="_blank">
-                                <img class="avatar-40 hidden-xs" src="/static/index/tipask/picture/2327_middle.jpg" alt="桃子哥哥">
+                            <a href="" class="avatar-link user-card" target="_blank">
+                                <img class="avatar-40 hidden-xs" src="/static/index/tipask/picture/2327_middle.jpg" alt="{$vo.username}">
                             </a>
                         </div>
                         <div class="media-body">
                             <div class="media-heading">
                                 <strong>
-                                    <a href="https://wenda.tipask.com/people/2327" class="mr-5 user-card">桃子哥哥</a><span class="text-gold"></span>
+                                    <a href="" class="mr-5 user-card">{$vo.username}</a><span class="text-gold"></span>
                                 </strong>
-                                <span class="answer-time text-muted hidden-xs">2017-03-28 10:10</span>
+                                <span class="answer-time text-muted hidden-xs">{:date('Y-m-d H:i:s',$vo['create_time'])}</span>
                             </div>
                             <div class="content">
                                 <div class="text-fmt mt-10 mb-10">
-                                    <p>
-                                        支持悬赏，可不可以自己加入微信收款 支付宝收款
-                                    </p>
+                                   {$vo.content}
                                 </div>
                             </div>
                             <div class="media-footer">
                                 <ul class="list-inline mb-20">
-                                    <li><a class="comments" data-toggle="collapse" href="#comments-answer-2137" aria-expanded="false" aria-controls="comment-2137"><i class="fa fa-comment-o"></i> 0 条评论</a></li>
+                                    <li><a class="comments" data-toggle="collapse" href="#comments-answer-{$vo.id}" aria-expanded="false" aria-controls="comment-{$vo.id}"><i class="fa fa-comment-o"></i> {$vo.comment_count} 条评论</a></li>
+                                    <!--<li><a class="btnclass comments btn{$vo.id}" href="{:url('index/Questions/answerComment',['id'=>$vo['id']])}"  btn-data="btn{$vo.id}"><i class="fa fa-comment-o"></i> {$vo.comment_count} 条评论</a></li>-->
                                     <li class="pull-right">
-                                        <button class="btn btn-default btn-sm btn-support" data-source_id="2137" data-source_type="answer" data-support_num="6"><i class="fa fa-thumbs-o-up"></i> 6</button>
+                                        <button class="btn btn-default btn-sm btn-support" data-source_id="{$vo.id}" data-source_type="answer" data-support_num="6"><i class="fa fa-thumbs-o-up"></i> {$vo.agree_count}</button>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="collapse widget-comments mb-20" id="comments-answer-2137" data-source_type="answer" data-source_id="2137">
+                            <div class="collapse widget-comments mb-20" id="comments-answer-{$vo.id}" data-source_type="answer" data-source_id="{$vo.id}">
+                                <!--<script src="/static/index/js/jquery.min.js"></script>-->
+                                <!--<script>-->
+                                    <!--$(function(){-->
+                                        <!--var sss = $("li .btnclass").attr('btn-data');-->
+                                        <!--console.log($(sss));-->
+                                        <!--$(sss).click(function () {-->
+                                            <!--console.log(11);-->
+                                        <!--});-->
+                                    <!--});-->
+
+                                <!--</script>-->
                                 <div class="widget-comment-list">
-                                </div>
-                                <!--<div class="widget-comment-form row">-->
-                                <!--<div class="col-md-12">-->
-                                <!--请先 <a  href="https://wenda.tipask.com/login">登录</a> 后评论-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <div class="widget-comment-form row">
-                                    <form class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea name="content" placeholder="写下你的评论" class="form-control" id="comment-answer-content-2137"></textarea>
+                                    <div class="media-body">
+                                        <div class="media-heading">
+                                            <a href="https://wenda.tipask.com/people/2569" target="_blank">小卢无梦</a>
                                         </div>
-                                    </form>
-                                    <div class="col-md-12 text-right">
-                                        <a href="https://wenda.tipask.com/question/3484#" class="text-muted collapse-cancel" data-collapse_id="comments-answer-2137">取消</a>
-                                        <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="answer-comment-2137-btn" data-token="SdQzJByudjcUNWgmrHGAEaAG3b8jJ1SxwU46yf9s" data-source_id="2137" data-source_type="answer" data-to_user_id="0">提交评论</button>
+                                        <div class="content">
+                                            <p>
+                                                啊哈哈哈
+                                            </p>
+                                        </div>
+                                        <div class="media-footer">
+                                            <ul class="list-inline text-muted">
+                                                <li>
+                                                    2017-05-18 09:28
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="ml-10 comment-reply" data-source_id="2130" data-to_user_id="2569" data-source_type="answer" data-message="回复 小卢无梦"><i class="fa fa-reply"></i> 回复</a>
+                                                </li>
+                                                <li class="pull-right">
+                                                    <button class="btn btn-default btn-xs btn-support" data-source_id="1090" data-source_type="comment" data-support_num="1"><i class="fa fa-thumbs-o-up"></i> 1</button>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="https://wenda.tipask.com/people/2327" class="avatar-link user-card" target="_blank">
-                                <img class="avatar-40 hidden-xs" src="/static/index/tipask/picture/2327_middle.jpg" alt="桃子哥哥">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">
-                                <strong>
-                                    <a href="https://wenda.tipask.com/people/2327" class="mr-5 user-card">桃子哥哥</a><span class="text-gold"></span>
-                                </strong>
-                                <span class="answer-time text-muted hidden-xs">2017-03-28 10:10</span>
-                            </div>
-                            <div class="content">
-                                <div class="text-fmt mt-10 mb-10">
-                                    <p>
-                                        支持悬赏，可不可以自己加入微信收款 支付宝收款
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-footer">
-                                <ul class="list-inline mb-20">
-                                    <li><a class="comments" data-toggle="collapse" href="#comments-answer-2137" aria-expanded="false" aria-controls="comment-2137"><i class="fa fa-comment-o"></i> 0 条评论</a></li>
-                                    <li class="pull-right">
-                                        <button class="btn btn-default btn-sm btn-support" data-source_id="2137" data-source_type="answer" data-support_num="6"><i class="fa fa-thumbs-o-up"></i> 6</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="collapse widget-comments mb-20" id="comments-answer-2137" data-source_type="answer" data-source_id="2137">
-                                <div class="widget-comment-list">
-                                </div>
-                                <!--<div class="widget-comment-form row">-->
-                                <!--<div class="col-md-12">-->
-                                <!--请先 <a  href="https://wenda.tipask.com/login">登录</a> 后评论-->
-                                <!--</div>-->
-                                <!--</div>-->
-                                <div class="widget-comment-form row">
-                                    <form class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea name="content" placeholder="写下你的评论" class="form-control" id="comment-answer-content-2137"></textarea>
-                                        </div>
-                                    </form>
-                                    <div class="col-md-12 text-right">
-                                        <a href="https://wenda.tipask.com/question/3484#" class="text-muted collapse-cancel" data-collapse_id="comments-answer-2137">取消</a>
-                                        <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="answer-comment-2137-btn" data-token="SdQzJByudjcUNWgmrHGAEaAG3b8jJ1SxwU46yf9s" data-source_id="2137" data-source_type="answer" data-to_user_id="0">提交评论</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="https://wenda.tipask.com/people/3148" class="avatar-link user-card" target="_blank">
-                                <img class="avatar-40 hidden-xs" src="/static/index/tipask/picture/3148_middle.jpg" alt="爆读"></a>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">
-                                <strong>
-                                    <a href="https://wenda.tipask.com/people/3148" class="mr-5 user-card">爆读</a><span class="text-gold"></span>
-                                </strong>
-                                <span class="text-muted"> - 发起人兼CEO</span>
-                                <span class="answer-time text-muted hidden-xs">2017-09-05 16:54</span>
-                            </div>
-                            <div class="content">
-                                <div class="text-fmt mt-10 mb-10">
-                                    <h4>我也来看看，<b>哈哈哈</b>，支持支持，<a href="http://baidu.com" target="_blank" rel="noreferrer">百度不怎么样</a>，那一年</h4>
-                                    <h4><br>
-                                    </h4>
-                                    <h4><img src="/static/index/tipask/picture/attachments-2017-09-szfpxxwe59ae663a18096.jpg" class="img-responsive" alt="attachments-2017-09-szFpxxwE59ae663a18096.jpg"></h4>
-                                </div>
-                            </div>
-                            <div class="media-footer">
-                                <ul class="list-inline mb-20">
-                                    <li><a class="comments" data-toggle="collapse" href="#comments-answer-2779" aria-expanded="false" aria-controls="comment-2779"><i class="fa fa-comment-o"></i> 0 条评论</a></li>
-                                    <li class="pull-right">
-                                        <button class="btn btn-default btn-sm btn-support" data-source_id="2779" data-source_type="answer" data-support_num="0"><i class="fa fa-thumbs-o-up"></i> 0</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="collapse widget-comments mb-20" id="comments-answer-2779" data-source_type="answer" data-source_id="2779">
-                                <div class="widget-comment-list">
-                                </div>
+
+                                {if condition='$info == null'}
                                 <div class="widget-comment-form row">
                                     <div class="col-md-12">
-                                        请先
-                                        <a href="https://wenda.tipask.com/login">登录</a> 后评论
+                                        请先 <a  href="">登录</a> 后评论
                                     </div>
                                 </div>
+                                {else/}
+
+                                <div class="widget-comment-form row">
+                                    <form class="col-md-12" method="post" action="{:url('index/AskQuestion/answerComment',['id'=>$vo['id'],'uid'=>$info['id']])}">
+                                        <div class="form-group">
+                                            <textarea name="content" placeholder="写下你的评论" class="form-control" id="comment-answer-content-{$vo.id}"></textarea>
+                                        </div>
+
+                                    <div class="col-md-12 text-right">
+                                        <a href="https://wenda.tipask.com/question/3484#" class="text-muted collapse-cancel" data-collapse_id="comments-answer-{$vo.id}">取消</a>
+                                        <button type="submit" class="btn btn-primary btn-sm ml-10 comment-btn" id="answer-comment-{$vo.id}-btn" data-token="SdQzJByudjcUNWgmrHGAEaAG3b8jJ1SxwU46yf9s" data-source_id="{$vo.id}" data-source_type="answer" data-to_user_id="0">提交评论</button>
+                                     </div>
+                                    </form>
+                                    </div>
+                                {/if}
                             </div>
                         </div>
                     </div>
+                    {/volist}
+
+
                     <div class="text-center">
                     </div>
                 </div>
@@ -610,6 +316,9 @@
                 </div>
                 {/if}
             </div>
+
+
+
             <div class="col-xs-12 col-md-3 side">
                 <div class="widget-box">
                     <ul class="widget-action list-unstyled">
@@ -618,33 +327,33 @@
                             <strong id="follower-num">14</strong> 关注
                         </li>
                         <li>
-                            <button id="collect-button" class="btn btn-default btn-sm" data-source_type ="" "question" data-source_id ="" "3484"> 收藏</button>
-                            <strong id="collection-num">1</strong> 收藏，<strong class="no-stress">16992</strong> 浏览
+                            <!--<button id="collect-button" class="btn btn-default btn-sm" data-source_type ="" "question" data-source_id ="" "3484"> 收藏</button>-->
+                            <strong class="no-stress">{$list.read_count}</strong> 浏览
                         </li>
                         <li>
                             <i class="fa fa-clock-o"></i>
-                            <a href="https://wenda.tipask.com/people/1337" target="_blank">廖香峰SEO</a>
-                            提出于 2017-03-23 12:58
+                            <a href="" target="_blank">{$list['nickname']}</a>
+                            提出于 {$list.create_time}
                         </li>
                     </ul>
                 </div>
-                <div class="widget-box">
-                    <h2 class="h4 widget-box__title">相似问题</h2>
-                    <ul class="widget-links list-unstyled list-text">
-                        <li class="widget-links-item">
-                            <a title="Tipask3.3新版本发布" href="https://wenda.tipask.com/question/4474">Tipask3.3新版本发布</a>
-                            <small class="text-muted">1 回答</small>
-                        </li>
-                        <li class="widget-links-item">
-                            <a title="升级更新就出错！" href="https://wenda.tipask.com/question/3682">升级更新就出错！</a>
-                            <small class="text-muted">2 回答</small>
-                        </li>
-                        <li class="widget-links-item">
-                            <a title="3.0的beta版本到时候能顺利的升级到正式版吗？" href="https://wenda.tipask.com/question/78">3.0的beta版本到时候能顺利的升级到正式版吗？</a>
-                            <small class="text-muted">4 回答</small>
-                        </li>
-                    </ul>
-                </div>
+                <!--<div class="widget-box">-->
+                    <!--<h2 class="h4 widget-box__title">相似问题</h2>-->
+                    <!--<ul class="widget-links list-unstyled list-text">-->
+                        <!--<li class="widget-links-item">-->
+                            <!--<a title="Tipask3.3新版本发布" href="https://wenda.tipask.com/question/4474">Tipask3.3新版本发布</a>-->
+                            <!--<small class="text-muted">1 回答</small>-->
+                        <!--</li>-->
+                        <!--<li class="widget-links-item">-->
+                            <!--<a title="升级更新就出错！" href="https://wenda.tipask.com/question/3682">升级更新就出错！</a>-->
+                            <!--<small class="text-muted">2 回答</small>-->
+                        <!--</li>-->
+                        <!--<li class="widget-links-item">-->
+                            <!--<a title="3.0的beta版本到时候能顺利的升级到正式版吗？" href="https://wenda.tipask.com/question/78">3.0的beta版本到时候能顺利的升级到正式版吗？</a>-->
+                            <!--<small class="text-muted">4 回答</small>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
             </div>
         </div>
     </div>
